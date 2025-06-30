@@ -1,0 +1,69 @@
+/* BookAppointment.css */
+
+.appointment-fullpage {
+  min-height: 90vh;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e0f7fa, #f0f9ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appointment-heading {
+  color: #007bff;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.appointment-form-no-card {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.appointment-form-no-card input,
+.appointment-form-no-card select {
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.appointment-form-no-card input:focus,
+.appointment-form-no-card select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+.appointment-form-no-card button {
+  padding: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.appointment-form-no-card button:hover {
+  background-color: #0056b3;
+}

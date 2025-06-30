@@ -1,0 +1,19 @@
+/* Home.css */
+
+.feature-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid #e3e3e3;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.15);
+}
+
+.feature-icon {
+  color: #007bff;
+  font-size: 2rem;
+}

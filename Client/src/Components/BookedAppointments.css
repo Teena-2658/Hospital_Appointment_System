@@ -1,0 +1,21 @@
+.appointment-card {
+  background: #fdfdfd;
+  border: 1px solid #e2e2e2;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.appointment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  background: #f0f8ff;
+}
+
+.doctor-name {
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

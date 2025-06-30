@@ -1,0 +1,30 @@
+/* Services.css */
+
+.service-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #f8fbff;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.2);
+  background: linear-gradient(to bottom, #f0f8ff, #e6f9ff);
+}
+
+.service-image {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}

@@ -1,0 +1,15 @@
+.user-card {
+  background: #fdfdfd;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.user-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.15);
+}
+
+.user-icon {
+  font-size: 3rem;
+}
