@@ -4,6 +4,18 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const path = require("path");
 
+// 🐞 Debug path-to-regexp crash
+const pathToRegexp = require("path-to-regexp");
+const originalParse = pathToRegexp.parse;
+pathToRegexp.parse = function (str, options) {
+  try {
+    return originalParse(str, options);
+  } catch (err) {
+    console.error("❗ Broken route path detected:", str);
+    throw err;
+  }
+};
+
 // Load environment variables
 dotenv.config();
 
@@ -15,7 +27,6 @@ const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/UserRoutes");
 const appointmentRoutes = require("./routes/appointmentsroutes");
 
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -25,14 +36,14 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/appointments", appointmentRoutes); // ✅ appointment route
 
+// Static files in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../Client/dist")));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../Client", "dist", "index.html")); // ✅ correct
+    res.sendFile(path.join(__dirname, "../Client", "dist", "index.html"));
   });
 }
-
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGOURL, {
