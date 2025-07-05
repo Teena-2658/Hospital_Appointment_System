@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Appointment from './pages/Appointment';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import RegisteredUsers from './components/RegisteredUsers';
-import BookedAppointments from './components/BookedAppointments'; // ✅ New Import
+import Navbar from './Components/Navbar.jsx';
+import Home from './Pages/Home';
+import Services from './Pages/Services';
+import Appointment from './Pages/Appointment';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import RegisteredUsers from './Components/RegisteredUsers';
+import BookedAppointments from './Components/BookedAppointments'; // ✅ New Import
 
 function App() {
   return (
