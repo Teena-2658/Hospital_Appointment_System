@@ -4,7 +4,16 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const path = require("path");
 
-// 🐞 Debug path-to-regexp crash
+// ✅ Monkey-patch Express to log all route paths before registering
+const originalUse = express.application.use;
+express.application.use = function (...args) {
+  if (typeof args[0] === "string") {
+    console.log("🔍 Registering route path:", args[0]);
+  }
+  return originalUse.apply(this, args);
+};
+
+// ✅ Debug path-to-regexp crash
 const pathToRegexp = require("path-to-regexp");
 const originalParse = pathToRegexp.parse;
 pathToRegexp.parse = function (str, options) {
@@ -16,27 +25,27 @@ pathToRegexp.parse = function (str, options) {
   }
 };
 
-// Load environment variables
+// ✅ Load environment variables
 dotenv.config();
 
-// Initialize Express
+// ✅ Initialize Express
 const app = express();
 
-// Import routes
+// ✅ Import routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/UserRoutes");
 const appointmentRoutes = require("./routes/appointmentsroutes");
 
-// Middleware
+// ✅ Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// ✅ Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api/appointments", appointmentRoutes); // ✅ appointment route
+app.use("/api/appointments", appointmentRoutes);
 
-// Static files in production
+// ✅ Static files in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../Client/dist")));
 
@@ -45,7 +54,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// MongoDB Connection
+// ✅ MongoDB Connection
 mongoose.connect(process.env.MONGOURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
