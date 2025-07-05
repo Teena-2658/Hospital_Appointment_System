@@ -8,8 +8,6 @@ const router = express.Router();
 // Register route
 router.post("/register", async (req, res) => {
   try {
-    console.log("Incoming data:", req.body); // Debug log
-
     const { username, email, password, role } = req.body;
 
     if (!username || !email || !password || !role) {
@@ -29,7 +27,6 @@ router.post("/register", async (req, res) => {
 
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
-    console.error("❌ error in /register route:", error);
     res.status(500).json({
       message: "Error in registration",
       error: error.message,

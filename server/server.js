@@ -13,7 +13,8 @@ const app = express();
 // Import routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/UserRoutes");
-const appointmentRoutes = require("./routes/appointmentsroutes.js"); 
+const appointmentRoutes = require("./routes/appointmentsroutes");
+
 
 // Middleware
 app.use(cors());
