@@ -13,7 +13,7 @@ const app = express();
 // Import routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/UserRoutes");
-const appointmentRoutes = require("./routes/appointmentsroutes"); // ✅ fixed filename
+const appointmentRoutes = require("./routes/appointmentsroutes.js"); 
 
 // Middleware
 app.use(cors());
